@@ -1,3 +1,5 @@
 function getComputerChoice() {
-    x = Math.random(Math.floor()* 100);
+    let x = Math.floor(Math.random() * 1000) + 1;
+    console.log(x);
 }
+
