@@ -19,18 +19,31 @@ function playRound() {
     if (a === b) {
         return ("It was a draw!");
     } else if (a === "ROCK" && b === "PAPER") {
+        ++playerScore;
         return ("Paper beats rock! Player wins!");
     } else if (a === "PAPER" && b === "SCISSORS") {
+        ++playerScore;
         return ("Scissors beats paper! Player wins!");
     } else if (a === "SCISSORS" && b === "ROCK") {
+        ++playerScore;
         return ("Rock beats scissors! Player wins!");
     } else if (a === "PAPER" && b === "ROCK") {
+        ++computerScore;
         return ("Paper beats rock! Computer wins!");
     } else if (a === "SCISSORS" && b === "PAPER") {
+        ++computerScore;
         return ("Scissors beats paper! Computer wins!");
     } else if (a === "ROCK" && b === "SCISSORS") {
+        ++computerScore;
         return ("Rock beats scissors! Computer wins!");
     } else {
         console.log("There was an error.");
     }
+}
+
+let computerScore = 0;
+let playerScore = 0;
+
+function game() {
+
 }
