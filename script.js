@@ -95,6 +95,6 @@ function game() {
     }
 }
 
-while (gameFinished = false) {
+while (gameFinished === false) {
     game();
 }
