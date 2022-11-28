@@ -16,51 +16,56 @@ function getPlayerChoice() {
 function playRound() {
     a = getComputerChoice();
     b = getPlayerChoice();
-    roundOn = true;
     if (a === b) {
         ++roundsPlayed;
         console.log("It was a draw!");
+        game();
         return ("It was a draw!");
     } else if (a === "ROCK" && b === "PAPER") {
         ++playerScore;
         ++roundsPlayed;
         console.log("Paper beats rock! Player wins!");
+        game();
         return ("Paper beats rock! Player wins!");
     } else if (a === "PAPER" && b === "SCISSORS") {
         ++playerScore;
         ++roundsPlayed;
         console.log("Scissors beats paper! Player wins!");
+        game();
         return ("Scissors beats paper! Player wins!");
     } else if (a === "SCISSORS" && b === "ROCK") {
         ++playerScore;
         ++roundsPlayed;
         console.log("Rock beats scissors! Player wins!");
+        game();
         return ("Rock beats scissors! Player wins!");
     } else if (a === "PAPER" && b === "ROCK") {
         ++computerScore;
         ++roundsPlayed;
         console.log("Paper beats rock! Computer wins!");
+        game();
         return ("Paper beats rock! Computer wins!");
     } else if (a === "SCISSORS" && b === "PAPER") {
         ++computerScore;
         ++roundsPlayed;
         console.log("Scissors beats paper! Computer wins!");
+        game();
         return ("Scissors beats paper! Computer wins!");
     } else if (a === "ROCK" && b === "SCISSORS") {
         ++computerScore;
         ++roundsPlayed;
         console.log("Rock beats scissors! Computer wins!");
+        game();
         return ("Rock beats scissors! Computer wins!");
     } else {
         console.log("There was an error.");
+        game();
     }
 }
 
 let roundsPlayed = 0;
 let computerScore = 0;
 let playerScore = 0;
-let roundOn = true;
-let gameFinished = true;
 
 function game() {
     if (roundsPlayed >= 5) {
@@ -69,32 +74,23 @@ function game() {
             roundsPlayed = 0;
             computerScore = 0;
             playerScore = 0;
-            gameFinished = false;
         } else if (playerScore > computerScore) {
             console.log(`Player wins with a staggering ${playerScore} points to the Computer's ${computerScore}!`);
             roundsPlayed = 0;
             computerScore = 0;
             playerScore = 0;
-            gameFinished = false;
         } else if (playerScore < computerScore) {
             console.log(`The Computer wins with ${computerScore} points to the Player's ${playerScore}!`);
             roundsPlayed = 0;
             computerScore = 0;
             playerScore = 0;
-            gameFinished = false;
         } else {
             console.log("Error");
             roundsPlayed = 0;
             computerScore = 0;
             playerScore = 0;
-            gameFinished = false;
         }
-    } else if (roundOn === true) {
-        roundOn = false;
+    } else {
         playRound();
     }
-}
-
-while (gameFinished === false) {
-    game();
 }
