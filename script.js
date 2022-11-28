@@ -53,5 +53,24 @@ let computerScore = 0;
 let playerScore = 0;
 
 function game() {
-
+    if (roundsPlayed >= 5) {
+        if (playerScore === computerScore) {
+            console.log(`The game was a tie, with a score of ${playerScore} to the Player and ${computerScore} to the Computer!`);
+            roundsPlayed = 0;
+            computerScore = 0;
+            playerScore = 0;
+        } else if (playerScore > computerScore) {
+            console.log(`Player wins with a staggering ${playerScore} points to the Computer's ${computerScore}!`);
+            roundsPlayed = 0;
+            computerScore = 0;
+            playerScore = 0;
+        } else if (playerScore < computerScore) {
+            console.log(`The Computer wins with ${computerScore} points to the Player's ${playerScore}!`);
+            roundsPlayed = 0;
+            computerScore = 0;
+            playerScore = 0;
+        } else {
+            console.log("Error");
+        }
+    }
 }
