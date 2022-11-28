@@ -59,7 +59,7 @@ function playRound() {
 let roundsPlayed = 0;
 let computerScore = 0;
 let playerScore = 0;
-let roundOn = false;
+let roundOn = true;
 let gameFinished = true;
 
 function game() {
